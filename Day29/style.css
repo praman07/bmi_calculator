@@ -1,0 +1,196 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: helvetica;
+}
+main {
+  min-height: 100vh;
+  width: 100%;
+  padding-top:10%;
+  flex-wrap: wrap;
+ background: radial-gradient(
+   circle at top right,
+  rgb(240, 226, 181),
+  orange,
+  pink,
+  rgb(202, 13, 129),
+  purple,
+  pink,
+  rgb(252, 199, 255),
+  skyblue,
+  rgb(243, 243, 243),
+  blue,
+  navy
+); display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap:30px;
+  position: relative;
+}
+.card{
+    height: 20vmax;
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.4), 
+    0 8px 100px rgba(0, 0, 0, 0.25);        
+    border-radius: 50px;
+    width: 80%;
+    min-height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    gap:23px;
+    overflow: hidden;
+    box-shadow: inset 2px 2px 10px white;
+
+}
+
+.colors{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height:fit-content;
+    justify-content: center;
+}
+
+.circles{
+    height:30px;
+    width:30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: aqua;
+    margin-top:-10px;
+}
+.card img{
+    height:18vmax;
+    border-radius: 40px;
+    margin: 1%;
+}
+/* MAIN INFO CONTAINER */
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+    overflow: hidden;   /* KEY */
+}
+
+/* HEADINGS */
+.info h1,
+.info h2,
+.info h3,
+.info p{
+    max-width: 100%;
+    overflow-wrap: break-word;   /* KEY */
+    word-break: break-word;      /* KEY */
+    white-space: normal;         /* KEY */
+}
+
+/* SPECS GRID */
+.specs{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* IMPORTANT */
+    gap: 6px 16px;
+}
+
+/* SPEC TEXT */
+.specs h3{
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.9;
+    white-space: normal;   /* REMOVE nowrap */
+}
+
+/* PROS / CONS PARAGRAPHS */
+.info p{
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* PROS / CONS LABEL */
+.info p span{
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 6px;
+}
+@media (max-width: 1024px){
+  .card{
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .card img{
+    height: 22vmax;
+  }
+}
+
+@media (max-width: 768px){
+  main{
+    padding-top: 20%;
+    gap: 20px;
+  }
+
+  .card{
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+  }
+
+  .colors{
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+
+  .circles{
+    margin: 0 5px;
+  }
+
+  .card img{
+    height: 30vmax;
+    margin: 10px 0;
+  }
+
+  .info{
+    align-items: center;
+    text-align: center;
+  }
+
+  .specs{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px){
+  main{
+    padding-top: 25%;
+  }
+
+  .card{
+    width: 95%;
+    border-radius: 30px;
+  }
+
+  .card img{
+    height: 38vmax;
+  }
+
+  .info h1{
+    font-size: 1.4rem;
+  }
+
+  .info h2{
+    font-size: 0.95rem;
+  }
+
+  .info p{
+    font-size: 0.85rem;
+  }
+}

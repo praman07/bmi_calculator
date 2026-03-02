@@ -1,0 +1,619 @@
+/* ===================================================
+   FERRARI LANDING PAGE — STYLES
+   =================================================== */
+
+/* ---------- RESET & BASE ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ferrari-red: #dc0000;
+    --ferrari-dark: #1a1a1a;
+    --ferrari-black: #0d0d0d;
+    --gold: #c8a94e;
+    --white: #ffffff;
+    --gray-light: #b0b0b0;
+    --gray-dark: #2a2a2a;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--ferrari-black);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ---------- NAVBAR ---------- */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 50px;
+    z-index: 1000;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+#navbar.scrolled {
+    background: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 30px rgba(220, 0, 0, 0.15);
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: var(--ferrari-red);
+    text-shadow: 0 0 20px rgba(220, 0, 0, 0.4);
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--ferrari-red);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--white);
+    text-shadow: 0 0 8px rgba(220, 0, 0, 0.5);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ---------- HERO SECTION ---------- */
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(30, 0, 0, 0.5) 100%),
+        url('https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=1920&q=80') center/cover no-repeat;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 80%, rgba(220, 0, 0, 0.12) 0%, transparent 60%);
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero-tagline {
+    font-size: 0.9rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    min-height: 22px;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.title-line {
+    display: block;
+    font-size: 4.5rem;
+    color: var(--white);
+}
+
+.title-accent {
+    font-size: 6rem;
+    color: var(--ferrari-red);
+    text-shadow: 0 4px 40px rgba(220, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--gray-light);
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 16px 48px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--ferrari-red);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 25px rgba(220, 0, 0, 0.4);
+}
+
+.btn-primary:hover {
+    background: #ff1a1a;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 40px rgba(220, 0, 0, 0.6);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--gray-light);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.scroll-indicator.visible {
+    opacity: 1;
+}
+
+.scroll-arrow {
+    margin-top: 8px;
+    animation: bounceDown 1.5s infinite;
+    font-size: 0.9rem;
+}
+
+@keyframes bounceDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- SECTION COMMON ---------- */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+    color: var(--white);
+}
+
+.section-title.light {
+    color: var(--white);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gray-light);
+    letter-spacing: 1px;
+    margin-bottom: 60px;
+}
+
+.section-subtitle.light {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- MODELS SECTION ---------- */
+#models {
+    padding: 100px 60px;
+    background: var(--ferrari-dark);
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.model-card {
+    background: var(--gray-dark);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.model-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.model-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 50px rgba(220, 0, 0, 0.25);
+}
+
+.model-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.model-card:hover img {
+    transform: scale(1.05);
+}
+
+.model-info {
+    padding: 24px;
+}
+
+.model-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--white);
+}
+
+.model-info .model-spec {
+    font-size: 0.85rem;
+    color: var(--ferrari-red);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.model-info p {
+    font-size: 0.9rem;
+    color: var(--gray-light);
+    line-height: 1.6;
+}
+
+/* ---------- STATS SECTION ---------- */
+#stats {
+    padding: 100px 60px;
+    background:
+        linear-gradient(135deg, rgba(220, 0, 0, 0.08) 0%, var(--ferrari-black) 100%);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.stat-card {
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--ferrari-red);
+}
+
+.stat-number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--ferrari-red);
+    text-shadow: 0 0 25px rgba(220, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-light);
+}
+
+/* ---------- GALLERY SECTION ---------- */
+#gallery {
+    padding: 100px 60px;
+    background: var(--ferrari-dark);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 250px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.gallery-item .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ---------- QUOTE SECTION ---------- */
+#quote {
+    padding: 120px 40px;
+    text-align: center;
+    background: var(--ferrari-black);
+    position: relative;
+}
+
+#quote::before {
+    content: '"';
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-heading);
+    font-size: 12rem;
+    color: rgba(220, 0, 0, 0.08);
+    line-height: 1;
+}
+
+.quote-text {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--white);
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.quote-text.visible {
+    opacity: 1;
+}
+
+.quote-author {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: opacity 0.8s ease 0.3s;
+}
+
+.quote-author.visible {
+    opacity: 1;
+}
+
+/* ---------- FOOTER ---------- */
+#footer {
+    padding: 60px 40px 30px;
+    background: var(--gray-dark);
+    text-align: center;
+}
+
+.footer-brand .logo-text {
+    font-size: 1.4rem;
+}
+
+.footer-brand p {
+    font-size: 0.8rem;
+    color: var(--gray-light);
+    margin-top: 6px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.footer-links a {
+    font-size: 0.8rem;
+    color: var(--gray-light);
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--ferrari-red);
+}
+
+.footer-copy {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 20px;
+}
+
+/* ---------- BACK TO TOP ---------- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--ferrari-red);
+    background: rgba(220, 0, 0, 0.15);
+    color: var(--ferrari-red);
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(8px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    background: var(--ferrari-red);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    #navbar {
+        padding: 14px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .title-line {
+        font-size: 2.5rem;
+    }
+
+    .title-accent {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    #models,
+    #stats,
+    #gallery {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .quote-text {
+        font-size: 1.4rem;
+    }
+}

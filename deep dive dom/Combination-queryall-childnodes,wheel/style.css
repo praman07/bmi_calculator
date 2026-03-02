@@ -1,0 +1,28 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#111;
+  color:#eee;
+  padding:40px;
+}
+
+.doc p{
+  margin-bottom:16px;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.cursor{
+  position:absolute;
+    background: transparent;
+    height:15px;
+    width:15px;
+  border:2px solid crimson;
+  border-radius:50px;
+  pointer-events:none;
+}

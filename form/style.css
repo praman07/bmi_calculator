@@ -1,0 +1,58 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+#father{
+  height:90%;
+  width:50%;
+  background-color: black;
+  align-items:center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1vh;
+}
+#reg{
+  height:10%;
+  width:100%;
+  background-color: rgb(118, 118, 118);
+  padding:3%;
+  border-radius:1vh 1vh 0 0;
+}
+.child{
+  height:90%;
+  width:100%;
+  background-color: rgb(132, 43, 43);
+  border-radius:0 0 1vh 1vh;
+  justify-content:space-around;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.fields{
+  padding:3%;
+  background-color: antiquewhite;
+}
+.Gender{
+  width:90%;
+  background-color: bisque;
+  height:10%;
+  margin-top:1px;
+  position: relative;
+  display: flex;
+  justify-content:space-around;
+
+}
+.Gender button{
+  
+}

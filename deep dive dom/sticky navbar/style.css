@@ -1,0 +1,61 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+main{
+    height: fit-content;
+    width: 100%;
+    background:linear-gradient(to top right , pink , purple, rgb(202, 131, 0) );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main img{
+    height:900px;
+    width:400px;
+    border-radius: 50px;
+    margin:10px;
+    box-shadow: 4px 4px 10px black;
+
+}
+nav{
+    height:10vh;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:white;
+    padding: 2%;
+    backdrop-filter: blur(100px);
+    border-bottom:1px solid white;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap:10px;
+}
+
+
+@media (max-width:500px) {
+    nav{
+        height: 10vh;
+    }
+    nav ul{
+        display: none;
+    }
+
+    nav h1{
+        font-size:1.5rem;
+    }
+}

@@ -1,0 +1,127 @@
+@font-face {
+  font-family: machina;
+  src: url(./NeueMachina-Regular.woff2);
+  font-weight: 600;
+}
+@font-face {
+  font-family:manrope ;
+  src: url(./Manrope-VariableFont_wght.woff2);
+}
+@font-face {
+  font-family: machina;
+  src: url(./NeueMachina-Light.woff2);
+  font-weight: 400;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+nav{
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  padding:1.8% 4%;
+  gap:15%;
+ 
+}
+nav .logo{
+  width:25.5vmin;
+}
+#profilediv{
+  display: flex;
+  justify-content: left;
+  align-items:center;
+}
+#profilediv .profile{
+  width:5vmin;
+  border-radius: 50%;
+  margin:0 0.3vmax;
+}
+#profilediv .profile:nth-child(2){
+  width:1vmax;
+  border-radius: 50%;
+  filter:invert(100);
+  transition: all ease-in-out 0.4s;
+}
+#profilediv .profile:nth-child(2):hover{
+  rotate:180deg;
+}
+#navcenter{
+  display: flex;
+  height:5%;
+  overflow: hidden;
+  width:fit-content;
+  padding:0.8vmax 1.3vmax;
+  border-radius: 7px;
+  justify-content: space-between;
+  background:linear-gradient(to bottom, #120D0D , #161111);
+  box-shadow:inset 0px 0.5px 0px rgba(255, 255, 255, 0.282),0.2px 1px 0px rgba(255, 255, 255, 0.282);
+  white-space: nowrap;
+  font-size:1vmax;
+}
+#navcenter h4{
+  background:transparent;
+  color:rgba(255, 255, 255, 0.642);
+  font-family: machina;
+  margin:0.1vmax 0.9vmax;
+}
+#navcenter h4:hover{
+  color:rgb(255, 255, 255);
+}
+.backsvg{
+    background: url(https://dfdx9u0psdezh.cloudfront.net/common/Background.svg);
+    min-height: 100vh;
+    background-size:120%;
+    background-position: top;
+    width: 100%;
+    object-fit: contain;
+    padding-bottom: 5vw;
+}
+main .textcenter h2{
+  color:#E85B1E;
+  text-transform: uppercase;
+  font-family: manrope;
+  font-weight: 400;
+  font-size: 1.3vmax;
+}
+main .textcenter h1{
+  color:#eeeeee;
+  text-transform: capitalize;
+  font-family: machina;
+  font-weight: 800;
+  font-size: 4vmax;
+}
+main .textcenter h4{
+  color:#eeeeee;
+  font-family: manrope;
+  font-weight: 300;
+  font-size: 1.8vmax;
+  opacity:0.9;
+}
+main .textcenter span{
+  background-color: #e85b1e57;
+  border:1px solid #E85B1E;
+}
+main .textcenter{
+  width:70vmax;
+  text-align: center;
+  line-height:1.5;
+  height:fit-content;
+  background-color: rgba(0, 255, 255, 0.225);
+  margin-top:7%;
+  left:50%;
+  transform: translateX(-50%);
+  position: relative;
+}
+
+@media (max-width:850px) {
+    #navcenter{
+      display: none;}
+}

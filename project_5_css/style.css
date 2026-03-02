@@ -1,0 +1,160 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family:Arial, Helvetica, sans-serif;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1.5% 5.5%;
+}
+.center-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:fit-content;
+}
+.center-nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.center-nav ul li{
+        margin: 0px 20px;
+  list-style-type: none;
+}
+
+.center-nav a{
+        text-decoration: none;
+    color:rgb(39, 39, 39);
+
+
+}
+.center-nav ul li:nth-child(1){
+    border-radius: 40px;
+    border: 1px solid rgba(212, 212, 212, 0.757);
+    padding:3px 7px;
+}
+.center-nav ul li{
+    border-radius: 40px;
+    padding:3px 7px;
+    font-size: 1vmax;
+}
+.button{
+    transition: all ease 0.4s;
+     align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: #001536;
+    color:white;
+    border-radius: 20px;
+    padding:0.7% 1.5%;
+    border-style: none;
+}
+.button img{
+    height:20px;
+    align-items: center;
+    border-radius: 50px;
+    margin-left:10px;
+    transition: all ease 0.3s;
+    filter: invert(100);
+}
+.button img:hover{
+    rotate:50deg;
+}
+
+.button:hover{
+    border-radius: 10px;
+}
+.logo h2{
+    font-weight: 500;
+}
+/*HERO SECTION*/
+
+section .main{
+    border-radius: 20px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: top;
+    width:89%;
+    margin:auto;
+    color:rgba(255, 255, 255, 0.904);
+    padding-top:12%;
+    height:600px;
+    position: relative;
+    background-image:url('https://unityholidays.co.uk/app/uploads/bis-images/1565/monitor-teaching-padel-class-2024-10-14-22-21-30-utc-scaled-1200x800-f70_56.jpg');
+}
+
+section .main h1{
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 3vmax;
+
+}
+
+.maintext{
+    margin:auto;
+    width:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap:15px;
+}   
+.maintext h1{
+    width:50vw;
+}
+.maintext h4{
+    width:40vw;
+    font-weight: 200;
+    font-size: 15px;
+}
+.maintext .button{
+    padding:1%;
+    font-size: 13px;
+    color:rgba(255, 255, 255, 0.791);
+}
+.mainend{
+        display: flex;
+        padding:0 2%;
+        margin-top: 16%;
+}
+.mainend h5{
+   font-size:13px;
+   font-weight: 500; 
+}
+.mainend .mainendimages img{
+    height: 30px;
+    border-radius: 100px;
+    margin-left:-5%;
+}
+.mainendimages{
+    width:7.5%;
+    padding:0.4% 0.3%;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.497);
+    display: flex;
+    justify-content: end;
+}
+.mainendbutton{
+    background:transparent;
+}
+.mainendbuttons{
+     background:rgba(0, 0, 0, 0.092);
+    display: flex;
+    width:25%;
+    justify-content: space-around;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 50px;
+    margin-left:50%;
+    position: relative;
+}

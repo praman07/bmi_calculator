@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ferrari SF90</title>
+
+    <!-- FONT -->
+    <style>
+        @font-face {
+            font-family: ferro;
+            src: url("ferro.ttf");
+        }
+    </style>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ferro, sans-serif;
+            background-color: #3b0d0d;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #2a0000;
+        }
+
+        header h1 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 2rem;
+            white-space: nowrap;
+        }
+
+        header button {
+            padding: 0.5rem 1.2rem;
+            cursor: pointer;
+            background: red;
+            border: none;
+            color: white;
+            font-family: ferro;
+            box-shadow: 0 0 10px black;
+        }
+
+        /* HERO SECTION */
+        main {
+            min-height: 100vh;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-box {
+            background: white;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px black;
+        }
+
+        .hero-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .hero-box:hover img {
+            transform: scale(1.1);
+        }
+
+        /* CENTER BIG CAR */
+        .car-main {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            margin-top: -10vh;
+            z-index: 2;
+            position: relative;
+        }
+
+        .car-main img {
+            width: 70%;
+            max-width: 800px;
+            transition: transform 0.5s;
+        }
+
+        .car-main img:hover {
+            transform: rotate(-1deg);
+            transform-origin: center;
+        }
+
+        /* TEXT SECTION */
+        .info {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .info h2 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .info p {
+            font-size: 1rem;
+            opacity: 0.8;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* ROTATING LOGO */
+        .logo {
+            width: 80px;
+            margin: 2rem auto;
+            animation: rotateLogo 6s linear infinite;
+        }
+
+        @keyframes rotateLogo {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #2a0000;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width:600px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .car-main img {
+                width: 90%;
+            }
+
+            .info h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Ferrari</h1>
+        <button id="changeTextBtn">Click Me</button>
+    </header>
+
+    <main>
+        <section class="hero">
+
+            <div class="hero-box">
+                <img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9" alt="">
+            </div>
+
+            <div class="hero-box">
+                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738" alt="">
+            </div>
+
+            <div class="hero-box">
+                <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="">
+            </div>
+
+            <div class="car-main">
+                <img id="mainCar" src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068" alt="Ferrari">
+            </div>
+
+        </section>
+
+        <section class="info">
+            <h2 id="titleText">Ferrari SF90</h2>
+            <p id="descText">
+                The SF90 represents performance, power and Ferrari racing DNA brought to the road.
+            </p>
+
+            <img class="logo"
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Ferrari-Logo.svg/1200px-Ferrari-Logo.svg.png">
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Ferrari Landing Page (Learning Project)</p>
+    </footer>
+
+    <script>
+        const btn = document.querySelector("#changeTextBtn");
+        const title = document.querySelector("#titleText");
+        const desc = document.querySelector("#descText");
+        const car = document.querySelector("#mainCar");
+
+        btn.addEventListener("click", function () {
+            title.textContent = "Ferrari Power";
+            desc.innerHTML = "Speed. <strong>Luxury.</strong> Performance.";
+
+            car.style.transform = "scale(1.05)";
+
+            setTimeout(function () {
+                car.style.transform = "scale(1)";
+            }, 800);
+        });
+
+        let angle = 0;
+
+        setInterval(function () {
+            angle += 1;
+            car.style.transform = "rotate(" + angle + "deg)";
+            car.style.transformOrigin = "center";
+        }, 3000);
+    </script>
+
+</body>
+
+</html>

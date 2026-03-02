@@ -1,0 +1,453 @@
+@font-face {
+    font-family:font1;
+    src: url(./font1.woff2);
+}
+@font-face {
+    font-family: font2;
+    src: url(./font2.woff2);
+}
+@font-face {
+    font-family: font3;
+    src: url(./font3.woff2);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+nav{
+    background-color: #001D21;
+    justify-content: left;
+    display: flex;
+    padding:1% ;
+    align-items: center;
+    gap: 45px;
+}
+nav img{
+    height:40px;
+    padding-left:5.3%;
+}
+nav a{
+    color:#A5ADB1;
+    text-decoration: none;
+    font-family: font3;
+}
+nav a:hover{
+    color:#FFFFFF;
+    transition: ease-in 0.2s;
+}
+nav a:focus{
+    font-weight: 600;
+    
+    transition: ease-out 0.2s;
+}
+nav button{
+    border-radius: 11px;
+    padding:1.1% 2%;
+    font-size: 16px;
+    font-weight: 450;
+    font-family: font3;
+    margin-left: 85%;
+    border-style: none;
+    background-color: #FFFFFF;
+    position: absolute;
+}
+nav button:hover{
+    background-color: rgb(188, 187, 255);
+    transition: ease-in-out 0.2s;
+    padding:1% 1.9%;
+}
+page1{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:5%;
+    background-color: #001D21;
+    color:#FFFFFF;
+    
+}
+
+page1 h1{
+    font-family: font3;
+    font-size: 63px;
+    font-weight: 400;
+    width:64%;
+    margin:auto;
+    text-align: center;
+
+    
+}
+page1 h2{
+    font-family: font3;
+    font-size: 17px;
+    font-weight: 400;
+    width:43%;
+    margin:auto;
+    text-align: center;
+    margin-top: 1%;
+    line-height:1.5;
+    color:#A5ADB1
+}
+page1bottom{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    padding-top:5%;
+
+}
+page1bottom img{
+    height:490px;
+    border-radius: 25px;
+}   
+
+page2{
+    display: flex;
+    flex-direction: column;
+    background-color: #fbfbfb;
+    padding: 4.5%;
+    padding-left:6.5%;
+    justify-content: end;
+    position: relative;
+
+}
+page2 h1{
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 37px;
+    width: 82.7%;
+    justify-content: end;
+    text-align: left;
+    margin-left: auto;
+}
+
+page2 h6{
+    font-family: font3;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#page2child{
+    font-family: font3;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    width:80%;
+    margin-left: 17%;
+    margin-top: 4%;
+    padding-left: 1%;
+    position: relative;
+}
+
+#page2child h1{
+    font-weight: 400;
+    font-size: 35px;  
+        
+ }
+.pg2txt{
+    display: grid;
+    border-left: 1px solid rgb(201, 201, 201);
+    padding-left:2%;
+}
+.pg2txt h6{
+    font-weight: 400;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 35px;
+    line-height: 2.3;
+}
+.pg2txt h4{
+    padding-left: 0%;
+    font-weight: 400;
+}
+ page2grand{
+    display: flex;
+    justify-content:center;
+    height:30%;
+    width:80%;
+    margin-left:17% ;
+    padding:1%;
+    color: #727272;
+    font-size: 10px;
+    background-color: #A5ADB1;
+    gap:2%;
+ }
+ page2grand h6{
+    font-weight: 500;
+    font-family: font3;
+ }
+ page2grandimg{
+    display: flex;
+    justify-content:center;
+    height:30%;
+    width:80%;
+    margin-left:17% ;
+    margin-top:3%;
+    padding:1%;
+    gap: 15%;
+    color: #848484;
+    font-size: 10px;
+ }
+ page3 h4{
+    font-family: font3;
+    font-size: 56px;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 6.5%;
+    padding-top: 1.5%;
+    padding-bottom: 1%;
+
+ }
+page3 h6{
+    font-family: font3;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+    padding-left:7%;
+    padding-top:5%;
+}
+#page3imgs{
+    width:100%;
+    background:transparent;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    padding:0 4%;
+}
+#page3imgs img{
+    height:380px;
+    border-radius: 30px;
+    margin-top: 2%;
+    z-index:3;
+    transition:ease-in-out 0.2s;
+    filter: brightness(90%);
+}
+#page3imgs img:hover{
+    border-radius: 30px; ;
+    z-index:3;
+    filter:brightness(105%) saturate(105%);
+}
+#imgtxt{
+    width:100%;
+    margin-top:-63%;
+    background:transparent;
+    display: flex;
+    position:absolute;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    padding:0 4%;
+    padding-top:1.5%;
+    text-align: end;
+
+}
+.h4{
+    width: 25%;
+    border-radius: 3px;
+    margin-top: 2%;
+    display: flex;
+    margin:0% 2%;
+    justify-content: space-around;
+    display: flex;
+    z-index:4;
+    justify-content: left;
+    line-height: 30px;
+    margin-top: 28%;
+
+}
+
+
+.h4 h4{
+    font-family: font3;
+    color:white;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+}
+.h4 span{
+    color:#bababa;
+    font-weight: 300;
+    font-size: 17px;
+}
+
+#page5child{
+    background-color: #001D21;
+    color: white;
+    padding:10% 6%;
+    line-height: 1.8;
+    margin-top: 5%;
+}
+#page5child h4{
+    font-size: 16px;
+    font-family: font3;
+    font-weight: 400;
+    color: #aeaeae;
+}
+#page5child h3{
+    font-size: 16px;
+    font-family: font3;
+    font-weight: 400;
+    color: #aeaeae;
+    margin-top: 5%; 
+    width:52%;
+}
+#page5child h5{
+    font-size: 16px;
+    font-family: font3;
+    font-weight: 400;
+    color: #ebebeb;
+}
+#page5child h1{
+    font-size: 58px;
+    font-family: font3;
+    font-weight: 400;
+    color: #ebebeb;
+}
+
+#years{
+    display:flex;
+    justify-content:space-between;
+    margin-left: 50%;
+    margin-top:4%;
+    transform: translateX(-50%);
+    width:100%;
+}
+#years h1{
+    gap:0.8%;
+    font-size: 65px;
+    color:rgba(188, 187, 255, 0.408);
+    transition: ease-in-out 0.2s;
+}
+#years h1:hover{
+    color:rgb(188, 187, 255);
+}
+#dots{
+    display: flex;
+    position:absolute;
+    justify-content: space-evenly;
+    color:rgb(182, 181, 254) ;
+    margin-top:-0.7%;
+    opacity:0.5;
+    width:88%;
+    gap:20%;
+}
+#test{
+    padding-left: 7%;
+    display: flex;
+    justify-content: left;
+}
+#test h6{
+    font-size: 16px;
+    font-family: font3;
+    font-weight: 300;
+    color: #101010;
+    padding-top: 4%;
+}
+#testtxt img{
+    height:300px;
+    border-radius: 24px;
+    margin:5% 0%;
+    transition: ease-in-out 0.2s;
+    
+}
+
+#testtxt{
+    margin-left:6%;
+}
+#testtxt h1{
+    font-family: font3;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 400;
+     margin-right: 6%;
+     width:98%;
+}
+#testtxt h3{
+     font-size: 24px;
+    font-family: font3;
+    font-weight: 400;
+    color: #001D21;
+    margin-top: 3.5%;
+}
+#testtxt span{
+     font-size: 20px;
+    font-family: font3;
+    font-weight: 400;
+    color: #9a9a9a;
+}
+#testtxt button{
+    padding:0.8% 1%;
+    border-radius: 100%;
+    border:1px solid black;
+    color:black;
+    background-color: #FFFFFF;
+    margin:4% 0%;
+    transition: ease-in-out 0.2s;
+}
+#testtxt button:hover{
+    background-color: rgb(188, 187, 255);
+
+}
+#page7i{
+    display:flex;
+    justify-content:space-between;
+    background-color: #001D21;
+    color:rgb(204, 203, 255);
+    padding: 3%;
+    border-bottom:0.5px solid rgb(61, 61, 80);
+}
+#page7i h1{
+    font-family: font3;
+    font-size: 44px;
+    font-weight: 500;
+}
+#page7img{
+    width:100%;
+    background-color: #001D21;
+    display: flex;
+    justify-content: center;
+    padding:5% 0%;
+}
+#page7i button{
+    border-radius: 11px;
+    padding:1.1% 2%;
+    font-size: 16px;
+    font-weight: 450;
+    font-family: font3;
+    margin-left: 85%;
+    border-style: none;
+    background-color: #FFFFFF;
+    position: absolute;
+}
+#page7i button:hover{
+    background-color: rgb(188, 187, 255);
+    transition: ease-in-out 0.2s;
+    padding:1% 1.9%;
+}
+#last{
+    background-color: #001D21;
+    display: flex;
+    justify-content: center;
+}
+#license{
+background-color: #101010;
+color:#d3d3d3;
+font-family: font3;
+display: flex;
+justify-content: space-between;
+border-top: 2px solid rgb(61, 61, 80);
+border-bottom: 2px solid rgb(61, 61, 80);
+}
+#license h4{
+    font-weight:350;
+    padding:2% 6%;
+    font-size: 14px;
+}
+#bllk{
+    background-color: #001D21;
+    padding:2% 0%;
+}
