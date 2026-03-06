@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>BMI Calculator</h1>
+
+<div class="unit-toggle">
+<button id="metricBtn" class="active">CM / KG</button>
+<button id="imperialBtn">FT / LBS</button>
+</div>
+
+<form id="bmiForm">
+
+<input id="name" type="text" placeholder="Your Name">
+
+<input id="height" type="number" placeholder="Height">
+
+<input id="weight" type="number" placeholder="Weight">
+
+<button type="submit" id="calcBtn">Calculate BMI</button>
+<button type="button" id="resetBtn">Reset</button>
+
+</form>
+
+<div id="result"></div>
+<h2>History</h2>
+<button id="clearHistory">Clear History</button>
+
+<ul id="history"></ul>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
